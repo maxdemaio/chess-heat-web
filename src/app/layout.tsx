@@ -30,19 +30,19 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning lang="en">
-      <Providers>
-        {/* default Inter font */}
-        <body
-          className={cn(
-            "dark:bg-zinc-900 dark:text-white bg-zinc-100 text-black",
-            fontSans.variable,
-            fontKai.variable
-          )}
-        >
+      {/* default Inter font */}
+      <body
+        className={cn(
+          "dark:bg-zinc-900 dark:text-white bg-zinc-100 text-black",
+          fontSans.variable,
+          fontKai.variable
+        )}
+      >
+        <Providers>
           <Navigation />
           <main className="lt-xs:px-4 px-8 max-w-5xl mx-auto">{children}</main>
-        </body>
-      </Providers>
+        </Providers>
+      </body>
     </html>
   );
 }
