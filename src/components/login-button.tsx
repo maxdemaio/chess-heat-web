@@ -9,14 +9,11 @@ function signIn(param1: string, param2: Object) {
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Icons } from "@/components/ui/icons";
-import { useTheme } from "next-themes";
 
 type State = "error" | "idle" | "pending" | "success";
 
 export function LoginButton({ redirectTo }: { redirectTo: string }) {
   const [state, setState] = useState<State>("idle");
-
-  const { setTheme, resolvedTheme } = useTheme();
 
   const handleSignIn = async () => {
     try {
@@ -36,9 +33,7 @@ export function LoginButton({ redirectTo }: { redirectTo: string }) {
         className="fancy-border-gradient hover:bg-background relative mx-auto flex gap-2 border-none"
       >
         <span>Log in with Chess.com</span>
-
-        {resolvedTheme === "dark" && <Icons.chesscomdark />}
-        {resolvedTheme === "light" && <Icons.chesscom />}
+        <Icons.chesscom />
       </Button>
     </div>
   );
