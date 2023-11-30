@@ -106,6 +106,19 @@
   transition: all 0.075s ease !important;
 }
 
+/* Fancy border begin */
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
 .fancy-border-gradient::before {
   inset: 0;
   content: '';
@@ -131,3 +144,4 @@
   mask-composite: exclude;
   pointer-events: none;
 }
+/* Fancy border end */

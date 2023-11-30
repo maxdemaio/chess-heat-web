@@ -9,7 +9,7 @@ export default function Login({
 }) {
   return (
     <div className="-mt-[56px] flex h-screen flex-col items-center justify-center gap-2">
-      <h1 className="text-5xl font-kai">Log in to Chess Heat</h1>
+      <h1 className="text-5xl font-kai">Welcome to Chess Heat!</h1>
       <p className="mb-4 text-muted-foreground text-sm">
         Join Chess Heat by logging in below.
       </p>
