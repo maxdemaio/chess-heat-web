@@ -146,7 +146,7 @@ export const Icons = {
     </svg>
   ),
   sun: (props: IconProps) => (
-    //
+    // solar:sun-2-bold
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="32"

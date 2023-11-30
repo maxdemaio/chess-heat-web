@@ -3,6 +3,7 @@ import { Inter as FontSans, Kaisei_Decol as FontKai } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/Navigation";
 import { cn } from "@/lib/utils";
+import { Providers } from "./providers";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -28,18 +29,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      {/* default Inter font */}
-      <body
-        className={cn(
-          "bg-zinc-900 text-white",
-          fontSans.variable,
-          fontKai.variable
-        )}
-      >
-        <Navigation />
-        <main className="lt-xs:px-4 px-8 max-w-5xl mx-auto">{children}</main>
-      </body>
+    <html suppressHydrationWarning lang="en">
+      <Providers>
+        {/* default Inter font */}
+        <body
+          className={cn(
+            "dark:bg-zinc-900 dark:text-white bg-zinc-100 text-black",
+            fontSans.variable,
+            fontKai.variable
+          )}
+        >
+          <Navigation />
+          <main className="lt-xs:px-4 px-8 max-w-5xl mx-auto">{children}</main>
+        </body>
+      </Providers>
     </html>
   );
 }
